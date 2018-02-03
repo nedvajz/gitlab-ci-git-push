@@ -1,13 +1,13 @@
 # GitLab CI runner that pushes to git
 
-This GitLab CI runner image allows to deploy a GitLab project to a remote Git repo (useful for Dokku, Heroku, Deis, etc.)
+This GitLab CI runner image allows to deploy a GitLab project to a remote Git repo.
 
 ## How to use
 
 Create `.gitlab-ci.yml`:
 
 ```yaml
-image: ilyasemenov/gitlab-ci-git-push
+image: luboson/gitlab-ci-git-push
 
 stages:
   - deploy
@@ -41,7 +41,3 @@ git-push user@git.host:repo branch
 ```console
 git-push ssh://dokku@dokku.me:8022/myapp
 ```
-
-### Not doing force push
-
-By default, git push will be forced. You can disable force push by setting environment variable `DISABLE_FORCE_PUSH` to any value.
