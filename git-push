@@ -25,6 +25,6 @@ echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H $ssh_port "$ssh_host" >> ~/.ssh/known_hosts
 
-git fetch --unshallow
+git fetch
 git config --global push.default simple
 git push $url ${CI_COMMIT_SHA:-HEAD}:${branch:-master}
